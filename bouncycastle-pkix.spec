@@ -1,3 +1,4 @@
+%{?_javapackages_macros:%_javapackages_macros}
 %global ver 150
 %global archivever  jdk15on-%(echo %{version}|sed 's|\\\.||')
 Name:          bouncycastle-pkix
