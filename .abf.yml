@@ -1,0 +1,4 @@
+sources:
+  bcpkix-jdk15on-1.50.pom: b7c4423b31336a48252d964f11803b62734457eb
+  bcpkix-jdk15on-150.tar.gz: f577a115d72f1adf2cd9d373b5b916a818ba9341
+  bouncycastle-pkix-build.xml: ae1920d0225621f261001aabfbff4c933af4d98e
