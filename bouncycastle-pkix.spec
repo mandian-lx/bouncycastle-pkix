@@ -52,7 +52,7 @@ This package contains javadoc for %{name}.
 # Unzip source and test suite resources
 mkdir -p src/java src/test
 unzip -qq src.zip -d src/java
-unzip -qq %{SOURCE1} 'cmp/*' 'rfc4134/*' 'org/bouncycastle/*' -x '*.class' -d src/test
+unzip -qq %{SOURCE1} 'cmp/**' 'rfc4134/**' 'org/bouncycastle/**' -x '**.class' -d src/test
 
 cp -p %{SOURCE2} pom.xml
 
