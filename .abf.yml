@@ -1,4 +1,6 @@
 sources:
-  bcpkix-jdk15on-1.50.pom: b7c4423b31336a48252d964f11803b62734457eb
-  bcpkix-jdk15on-150.tar.gz: f577a115d72f1adf2cd9d373b5b916a818ba9341
-  bouncycastle-pkix-build.xml: ae1920d0225621f261001aabfbff4c933af4d98e
+  bcpkix-jdk15on-1.54.pom:	9d19e1d9f2c7c32d6e39f78fe45100c2c80b0609
+  bcpkix-jdk15on-154.tar.gz:	671184e30838a683f64ff786f32ed60aecff4570
+  bctest-jdk15on-154.jar:	216ae5805aa03415c17a5332e6e5a0b9fc711098
+  bouncycastle-pkix-build.xml:	87f2193ea5272097c4504b95cf7efa341b86e28f
+  bouncycastle-pkix-OSGi.bnd:	9cfaa01d8b101fa259315b3b6ced89196d076d4d
