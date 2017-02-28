@@ -18,6 +18,7 @@ Source1:       http://www.bouncycastle.org/download/bctest-%{archivever}.jar
 Source2:       http://central.maven.org/maven2/org/bouncycastle/bcpkix-jdk15on/%{version}/bcpkix-jdk15on-%{version}.pom
 Source3:       bouncycastle-pkix-build.xml
 Source4:       bouncycastle-pkix-OSGi.bnd
+Patch0:        %{name}-1.54-fix_missing_bnd.patch
 
 BuildRequires: ant
 BuildRequires: ant-junit
@@ -80,6 +81,9 @@ cp -p %{SOURCE3} build.xml
 cp -p %{SOURCE4} bcpkix.bnd
 sed -i "s|@VERSION@|%{version}|" build.xml bcpkix.bnd
 
+# fix missing /usr/bin/bnd
+%patch0 -p1 -b .orig
+
 # this test fails:
 rm src/test/org/bouncycastle/cms/test/Rfc4134Test.java
 sed -i "s|suite.addTest(Rfc4134Test.suite());|//suite.addTest(Rfc4134Test.suite());|" \
@@ -93,6 +97,8 @@ rm -rf src/test/org/bouncycastle/openssl/test
 mkdir lib
 build-jar-repository -s -p lib bcprov junit ant/ant-junit aqute-bnd
 %ant -Dbc.test.data.home=$(pwd)/src/test jar javadoc
+java -jar $(build-classpath aqute-bnd) wrap -properties bcpkix.bnd build/bcpkix.jar
+mv bcpkix.bar build/bcpkix.jar
 %mvn_artifact pom.xml build/bcpkix.jar
 
 %install
