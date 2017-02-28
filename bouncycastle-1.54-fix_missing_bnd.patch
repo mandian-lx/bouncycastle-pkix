@@ -1,0 +1,19 @@
+--- bcpkix-jdk15on-154/build.xml.orig
++++ bcpkix-jdk15on-154/build.xml
+@@ -216,12 +216,13 @@
+   </taskdef>
+   
+   <target name="package" depends="compile,test" description="Package the application">
+-    <bnd
++     <jar basedir="${build.classes}" destfile="${build.dir}/${jar.name}.jar" />
++    <!--bnd
+          classpath="${build.classes}"
+          failok="false"
+          exceptions="false"
+          files="bcpkix.bnd"
+-         output="${build.dir}/${jar.name}.jar"/>
++         output="${build.dir}/${jar.name}.jar"/-->
+   </target>
+ 
+   <!-- ====================================================================== -->
+
