@@ -88,10 +88,14 @@ rm -rf src/test/org/bouncycastle/openssl/test
 %mvn_file :bcpkix-jdk15on bcpkix
 %mvn_alias :bcpkix-jdk15on "org.bouncycastle:bctsp-jdk16"
 
+# actually bnd is not provided by anyone
+sed -i -e 's|depends="package"| depends="compile,test"|g' build.xml
+
 %build
 mkdir lib
 build-jar-repository -s -p lib bcprov junit ant/ant-junit aqute-bnd
 %ant -Dbc.test.data.home=$(pwd)/src/test jar javadoc
+java -jar $(build-classpath aqute-bnd) wrap -properties bcpkix.bnd bcpkix.jar
 %mvn_artifact pom.xml build/bcpkix.jar
 
 %install
