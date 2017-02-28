@@ -23,7 +23,8 @@ BuildRequires: ant
 BuildRequires: ant-junit
 BuildRequires: aqute-bnd
 BuildRequires: java-devel
-BuildRequires: javapackages-local
+BuildRequires: maven-local
+BuildRequires: jpackage-utils
 BuildRequires: junit
 BuildRequires: mvn(org.bouncycastle:bcprov-jdk15on) = %{version}
 Requires:      mvn(org.bouncycastle:bcprov-jdk15on) = %{version}
